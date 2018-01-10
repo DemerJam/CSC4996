@@ -1,2 +1,2 @@
 # CSC4996
-Repository created for first assignment in CSC 4996 Wayne State University
+To begin this assignment I am going to have to do a fair amount of learning before I start at all. I need to learn about WAMP servers, how to write rudimentary but functional PHP, about a fair number of the documentation items, and much more. My CSC4710 project was a web application that used java to perform actions on a MySql database so I am hoping that experience will help me a bit here.
