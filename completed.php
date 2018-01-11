@@ -3,6 +3,7 @@
   <head>
   <meta charset ="utf-8">
   <title>Completed Tasks</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <h1> Completed Tasks </h1>
 <?php
@@ -31,9 +32,8 @@ $conn = mysqli_connect("localhost", "root", "", "todo");
         echo "<td>".$row["status"]."</td>";
         echo "<td>".$row["duedate"]."</td>";
       echo "</tr>";
-      echo "<br>";
-    echo "</table>";
     }    
+    echo "</table>";
 }
   else{
     echo "There are currently no completed tasks to be viewed."."<br>";}
