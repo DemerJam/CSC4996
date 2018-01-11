@@ -7,12 +7,11 @@
   </head>
   <h1> Completed Tasks </h1>
 <?php
-$conn = mysqli_connect("localhost", "root", "", "todo");
-  if ($conn == false)
-    echo "Connection failed, check to make sure username/password are correct.";
+  include_once 'classes.php';
+  $obj = new getConnection;
 
   $query = "SELECT * FROM tasks WHERE status='Completed';";
-  $execute = mysqli_query($conn, $query);
+  $execute = mysqli_query($obj->getConn(), $query);
   if(mysqli_num_rows($execute) > 0)
 {
  echo "<table>";
@@ -38,10 +37,7 @@ $conn = mysqli_connect("localhost", "root", "", "todo");
   else{
     echo "There are currently no completed tasks to be viewed."."<br>";}
   
-  mysqli_close($conn);
-
-
+  mysqli_close($obj->getConn());
 ?>
-
 <a href="index.php">Home</a>
 </html>

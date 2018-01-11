@@ -3,15 +3,16 @@
   <head>
   <meta charset ="utf-8">
   <title>Late Tasks</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <h1> Late Tasks </h1>
 <?php
-$conn = mysqli_connect("localhost", "root", "", "todo");
-  if (!$conn)
-    echo "Connection failed, check to make sure username/password are correct.";
+  include_once 'classes.php';
+
+  $obj = new getConnection;
 
   $query = "SELECT * FROM tasks WHERE status='Late';";
-  $execute = mysqli_query($conn, $query);
+  $execute = mysqli_query($obj->getConn(), $query);
   if(mysqli_num_rows($execute) > 0)
 {
  echo "<table>";
@@ -31,15 +32,14 @@ $conn = mysqli_connect("localhost", "root", "", "todo");
         echo "<td>".$row["status"]."</td>";
         echo "<td>".$row["duedate"]."</td>";
       echo "</tr>";
-      echo "<br>";
-    echo "</table>";
-    }    
+   
+    }
+echo "</table>";    
 }
   else{
     echo "There are currently no late tasks to be viewed."."<br>";}
   
-  mysqli_close($conn);
+  mysqli_close($obj->getConn());
 ?>
-
 <a href="index.php">Home</a>
 </html>
