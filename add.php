@@ -27,6 +27,7 @@
   </head>
   <h1> Add a Task </h1>
   <p>Please fill out the form and press submit to add a new task</p>
+<div>
 <form action="add.php" method="post">
     <label for="name">Name</label>
     <input type="text" name="name" value="<?php echo $name; ?>">
@@ -34,10 +35,11 @@
     <input type="text" name="status" value="<?php echo $status; ?>">
     <label for="duedate">Due Date</label>
     <input type="text" name="duedate" value="<?php echo $duedate; ?>">
+    <br>
+    <br>
     <input type="submit" name="submit" value="Submit">
-    
-
   </form>
+</div>
 <br>
-<a href="index.php">Home/Cancel</a>
+<p><a href="index.php">Home/Cancel</a></p>
 </html>

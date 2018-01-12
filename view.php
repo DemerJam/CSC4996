@@ -43,5 +43,5 @@ echo "</table>";
   mysqli_close($obj->getConn());
 ?>
 
-<a href="index.php"> Home </a>
+<p><a href="index.php"> Home </a></p>
 </html>

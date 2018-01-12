@@ -2,16 +2,16 @@
 <html>
   <head>
   <meta charset ="utf-8">
-  <title>Started Tasks</title>
+  <title>Other Tasks</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <h1> Started Tasks </h1>
+  <h1> Other Tasks </h1>
 <?php
   include_once 'classes.php';
-  $obj = new getConnection;//objects
+  $obj = new getConnection;
   $Q = new query;
 
-  $query = $Q->getStarted();
+  $query = $Q->getOther();
   $execute = mysqli_query($obj->getConn(), $query);
   if(mysqli_num_rows($execute) > 0)
 {
@@ -32,15 +32,13 @@
         echo "<td>".$row["status"]."</td>";
         echo "<td>".$row["duedate"]."</td>";
       echo "</tr>";
-   
-    } 
-echo "</table>";   
+    }    
+    echo "</table>";
 }
   else{
-    echo "There are currently no started tasks to be viewed."."<br>";}
+    echo "There are currently no other tasks to be viewed."."<br>";}
   
   mysqli_close($obj->getConn());
 ?>
-
 <p><a href="index.php">Home</a></p>
 </html>

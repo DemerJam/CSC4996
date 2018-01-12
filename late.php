@@ -10,8 +10,9 @@
   include_once 'classes.php';
 
   $obj = new getConnection;
+  $Q = new query;
 
-  $query = "SELECT * FROM tasks WHERE status='Late';";
+  $query = $Q->getLate();
   $execute = mysqli_query($obj->getConn(), $query);
   if(mysqli_num_rows($execute) > 0)
 {
@@ -41,5 +42,5 @@ echo "</table>";
   
   mysqli_close($obj->getConn());
 ?>
-<a href="index.php">Home</a>
+<p><a href="index.php">Home</a></p>
 </html>
