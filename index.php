@@ -2,14 +2,17 @@
 <html>
   <head>
   <meta charset ="utf-8">
-  <title>Todo Application</title>
+  <title>TODO Application</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
+
+  <div class="sidebar">
+  </div>
  
-  <h1> Todo Application </h1>
+  <h1> TODO Application </h1>
   
   <p><a href="add.php"><button>Add a Task</button></a></p>
   <p><a href="view.php"><button>View/Delete Tasks</button></a></p>
+
 
 <?php
   require 'classes.php';
@@ -59,10 +62,12 @@
   $execute = mysqli_query($obj->getConn(), $query);
   $otherNum = mysqli_num_rows($execute);
   echo "<p>Total Number of Other Tasks in the System";
-  echo "<a href=other.php>: $otherNum </p>";
-   
+  echo "<a href=other.php>: $otherNum </a></p>";
+
   mysqli_close($obj->getConn());
 ?>
 
+<br><br><br><br><br><br><br><br><br>
+<div class="footer"> TODO app James Demery </div>
   
 </html>

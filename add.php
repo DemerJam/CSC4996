@@ -25,21 +25,23 @@
   <title>Add a Task</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+<div class="sidebar">
+  </div>
   <h1> Add a Task </h1>
   <p>Please fill out the form and press submit to add a new task</p>
 <div>
 <form action="add.php" method="post">
     <label for="name">Name</label>
-    <input type="text" name="name" value="<?php echo $name; ?>">
+    <input type="text" name="name" value="<?php echo $name; ?>"required>
     <label for="status">Status</label>
-    <input type="text" name="status" value="<?php echo $status; ?>">
+    <input type="text" name="status" value="<?php echo $status; ?>"required>
     <label for="duedate">Due Date</label>
-    <input type="text" name="duedate" value="<?php echo $duedate; ?>">
+    <input type="text" name="duedate" value="<?php echo $duedate; ?>"required>
     <br>
     <br>
     <input type="submit" name="submit" value="Submit">
   </form>
 </div>
 <br>
-<p><a href="index.php">Home/Cancel</a></p>
+<p><a href="index.php"><button>Home/Cancel</button></a></p>
 </html>

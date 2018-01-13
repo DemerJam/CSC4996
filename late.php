@@ -5,6 +5,8 @@
   <title>Late Tasks</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+<div class="sidebar">
+  </div>
   <h1> Late Tasks </h1>
 <?php
   include_once 'classes.php';
@@ -38,9 +40,9 @@
 echo "</table>";    
 }
   else{
-    echo "There are currently no late tasks to be viewed."."<br>";}
+    echo "<p>There are currently no late tasks to be viewed.<p>"."<br>";}
   
   mysqli_close($obj->getConn());
 ?>
-<p><a href="index.php">Home</a></p>
+<p><a href="index.php"><button>Home</button></a></p>
 </html>

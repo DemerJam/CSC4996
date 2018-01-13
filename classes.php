@@ -17,16 +17,24 @@ class query{
 		$pendingTasks = "SELECT * FROM tasks WHERE status='Pending';";
 		return $pendingTasks;}
 	public function getStarted(){
-		$startedTasks = "SELECT * FROM tasks WHERE status='Pending';";
+		$startedTasks = "SELECT * FROM tasks WHERE status='Started';";
 		return $startedTasks;}
 	public function getCompleted(){
-		$completedTasks = "SELECT * FROM tasks WHERE status='Pending';";
+		$completedTasks = "SELECT * FROM tasks WHERE status='Completed';";
 		return $completedTasks;}
 	public function getLate(){
-		$lateTasks = "SELECT * FROM tasks WHERE status='Pending';";
+		$lateTasks = "SELECT * FROM tasks WHERE status='Late';";
 		return $lateTasks;}
 	public function getOther(){
 		$otherTasks = "SELECT * FROM tasks WHERE status!='Started' AND status != 'Completed' AND status != 'Pending' AND status != 'Late';";
 		return $otherTasks;}
+	public function delete(){
+		$delete = "DELETE FROM tasks WHERE taskid='$taskid';";
+		return $delete;}
+	public function deleteAll(){
+		$deleteAll = "DELETE FROM tasks;";
+		return $deleteAll;}
 }
+
+
 ?>
