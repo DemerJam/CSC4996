@@ -19,20 +19,37 @@
   $obj = new getConnection;
   $Q = new query;
 
+  /*$query = $Q->getAllTasks();
+  $execute = mysqli_query($obj->getConn(), $query); //execute the query with the given connection
+  if($execute){
+  $totalNum = mysqli_num_rows($execute); //get the total number of rows that the query satisfies
+  echo "<p>Total Number of Tasks in the System";//output result w/ hyperlink
+  echo "<a href=view.php>: $totalNum</a></p>";}
+  
+  else{
+	$totalNum = 0;
+	echo"<p>Total Number of Tasks in the System";
+	echo"<a href=view.php>: $totalNum</a></p>;}*/
+
   $query = "CREATE DATABASE IF NOT EXISTS todo;";
   $execute = mysqli_query($obj->getConn(), $query);
 
-  $query = "use todo;";
+  $query = "USE todo;";
   $execute = mysqli_query($obj->getConn(), $query);
 
-  $query="CREATE TABLE IF NOT EXISTS tasks(task id integer auto_increment, name varchar(50), status varchar(15), duedate varchar(10), primary key(taskid));";
+  $query = "CREATE TABLE IF NOT EXISTS Tasks(
+taskid integer auto_increment,
+name varchar(50),
+status varchar(15),
+duedate varchar(10),
+primary key(taskid));";
   $execute = mysqli_query($obj->getConn(), $query);
-  
+
   $query = $Q->getAllTasks();
   $execute = mysqli_query($obj->getConn(), $query); //execute the query with the given connection
   $totalNum = mysqli_num_rows($execute); //get the total number of rows that the query satisfies
   echo "<p>Total Number of Tasks in the System";//output result w/ hyperlink
-  echo "<a href=view.php>: $totalNum</a></p>"; 
+  echo "<a href=view.php>: $totalNum</a></p>";
 
   $query = $Q->getPending(); //get only those tasks where status is pending
   $execute = mysqli_query($obj->getConn(), $query); 
@@ -66,8 +83,6 @@
 
   mysqli_close($obj->getConn());
 ?>
-
 <br><br><br><br><br><br><br><br><br>
 <div class="footer"> TODO app James Demery </div>
-  
 </html>

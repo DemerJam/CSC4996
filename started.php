@@ -33,6 +33,7 @@
         echo "<td>".$row["name"]."</td>";
         echo "<td>".$row["status"]."</td>";
         echo "<td>".$row["duedate"]."</td>";
+        echo "<td><a href='delete.php?del=$row[taskid]'>Delete</a></td>";
       echo "</tr>";
    
     } 

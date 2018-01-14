@@ -29,11 +29,11 @@
       
   while($row = $execute->fetch_assoc())
     {
-      //echo "Task Name: ". $row["name"]."<br>"."Status: " . $row["status"]."<br>". "Due Date: " . $row["duedate"]."<br>"."<br>";}
       echo "<tr>";
         echo "<td>".$row["name"]."</td>";
         echo "<td>".$row["status"]."</td>";
         echo "<td>".$row["duedate"]."</td>";
+	echo "<td><a href='delete.php?del=$row[taskid]'>Delete</a></td>";
       echo "</tr>";
    
     }

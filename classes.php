@@ -1,10 +1,18 @@
 <?php
+
 class getConnection {
-  
 	public function getConn(){
-		$conn=mysqli_connect("localhost", "root", "", "todo");
-		if(!$conn)
-			echo "Error connecting to database.";
+		$conn = mysqli_connect('localhost', 'root', '');
+  		if(!$conn)
+			die("database conn failed".mysqli_error($conn));
+
+		$query = "CREATE DATABASE IF NOT EXISTS todo;";
+  		$execute = mysqli_query($conn, $query);
+
+  		$select = mysqli_select_db($conn, 'todo');
+  		if(!$select)
+			die("Database select failed".mysqli_error($select));
+
 		return $conn;}	
 }
 
