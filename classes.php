@@ -1,5 +1,4 @@
 <?php
-
 class getConnection {
 	public function getConn(){
 		$conn = mysqli_connect('localhost', 'root', '');
@@ -17,7 +16,6 @@ class getConnection {
 }
 
 class query{
-
 	public function getAllTasks(){
 		$allTasks="SELECT * FROM tasks;";
 		return $allTasks;}
@@ -44,5 +42,13 @@ class query{
 		return $deleteAll;}
 }
 
+class users{
+	public function getName(){
+		$userName = "";//get at login
+		return $userName;}
+	public function getID(){
+		$ID = "";//get at login
+		return $ID;}
+}
 
 ?>
